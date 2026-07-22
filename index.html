@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Employability Journey — BSM24202 The Consumer Journey</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#152238;
+    --navy-2:#1F3350;
+    --amber:#E2A63D;
+    --amber-dim:#C98F2C;
+    --sage:#71937A;
+    --paper:#F7F7F4;
+    --paper-2:#EFEFEA;
+    --ink:#1A1D22;
+    --ink-soft:#4A5058;
+    --line:#DEDED7;
+    --white:#FFFFFF;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{font-family:'Fraunces',serif;}
+  a{color:inherit;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
+
+  /* NAV */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(21,34,56,0.96);
+    backdrop-filter:blur(6px);
+    color:var(--white);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px;}
+  .nav-id{font-size:13px;letter-spacing:0.04em;color:#B9C3D0;}
+  .nav-id strong{color:var(--white);font-weight:600;}
+  .nav-links{display:flex;gap:28px;font-size:13px;}
+  .nav-links a{text-decoration:none;color:#CBD4DE;letter-spacing:0.02em;transition:color .15s;}
+  .nav-links a:hover{color:var(--amber);}
+  @media (max-width:640px){.nav-links{display:none;}}
+
+  /* HERO */
+  .hero{
+    background:radial-gradient(120% 140% at 15% -10%, #223a5c 0%, var(--navy) 55%, #0E1826 100%);
+    color:var(--white);
+    padding:88px 0 64px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .wrap{position:relative;z-index:2;}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;letter-spacing:0.14em;text-transform:uppercase;
+    color:var(--amber);margin-bottom:18px;display:block;
+  }
+  .hero h1{
+    font-size:clamp(38px,6vw,64px);
+    font-weight:500;
+    line-height:1.05;
+    margin:0 0 20px;
+    max-width:780px;
+  }
+  .hero h1 em{font-style:italic;color:var(--amber);font-weight:500;}
+  .hero p.lead{
+    max-width:560px;color:#C7D0DB;font-size:17px;margin:0 0 48px;
+  }
+
+  /* ROUTE / JOURNEY SIGNATURE */
+  .route{
+    display:flex;
+    position:relative;
+    padding-top:8px;
+    gap:0;
+  }
+  .route-line{
+    position:absolute;
+    top:23px;left:4%;right:4%;
+    height:2px;
+    background:repeating-linear-gradient(90deg, rgba(226,166,61,0.55) 0 8px, transparent 8px 16px);
+    z-index:0;
+  }
+  .stop{
+    flex:1;
+    text-align:center;
+    position:relative;
+    z-index:1;
+    padding:0 8px;
+    cursor:pointer;
+    text-decoration:none;
+    display:block;
+  }
+  .stop-dot{
+    width:14px;height:14px;border-radius:50%;
+    background:var(--navy);
+    border:2px solid var(--amber);
+    margin:0 auto 14px;
+    transition:transform .2s, background .2s;
+  }
+  .stop:hover .stop-dot{background:var(--amber);transform:scale(1.15);}
+  .stop-stage{
+    font-family:'JetBrains Mono',monospace;
+    font-size:10.5px;letter-spacing:0.08em;text-transform:uppercase;
+    color:#8CA0B8;display:block;margin-bottom:6px;
+  }
+  .stop-skill{
+    font-size:14px;font-weight:600;color:var(--white);line-height:1.3;
+  }
+
+
+#s-advocacy{
+    grid-template-columns: 38% 62%;
+}
+
+#s-advocacy .skill-media{
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#s-advocacy .skill-media img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+  @media (max-width:760px){
+    .route{flex-direction:column;gap:22px;align-items:flex-start;}
+    .route-line{display:none;}
+    .stop{text-align:left;display:flex;align-items:center;gap:14px;padding:0;}
+    .stop-dot{margin:0;flex-shrink:0;}
+  }
+
+  /* SECTION HEADERS */
+  .section{padding:88px 0;}
+  .section-alt{background:var(--paper-2);}
+  .section-head{margin-bottom:44px;max-width:640px;}
+  .section-eyebrow{
+    font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.1em;
+    text-transform:uppercase;color:var(--sage);display:block;margin-bottom:12px;
+  }
+  .section-head h2{font-size:clamp(26px,4vw,36px);font-weight:500;margin:0 0 14px;color:var(--navy);}
+  .section-head p{color:var(--ink-soft);font-size:16px;margin:0;}
+
+  /* REFLECTION */
+  .reflection-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:48px clamp(24px,5vw,64px);
+    position:relative;
+  }
+  .reflection-meta{
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.06em;
+    text-transform:uppercase;color:var(--ink-soft);
+    border-bottom:1px solid var(--line);
+    padding-bottom:18px;margin-bottom:30px;
+  }
+  .reflection-body p{
+    font-size:17px;line-height:1.75;color:#2A2E34;margin:0 0 22px;
+  }
+  .reflection-body p:first-of-type::first-letter{
+    font-family:'Fraunces',serif;
+    font-size:58px;font-weight:600;line-height:0.8;
+    float:left;margin:6px 8px 0 0;color:var(--navy);
+  }
+  .cite{color:var(--sage);font-weight:500;}
+
+  /* SEMANTICS CALLOUT */
+  .callout{
+    background:var(--navy);
+    color:var(--white);
+    border-radius:4px;
+    padding:36px clamp(24px,5vw,48px);
+    margin-top:36px;
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:28px;
+    align-items:start;
+  }
+  .callout-mark{
+    font-family:'Fraunces',serif;font-style:italic;font-size:44px;color:var(--amber);line-height:1;
+  }
+  .callout h3{margin:0 0 10px;font-size:19px;font-weight:500;color:var(--white);}
+  .callout p{margin:0;color:#C7D0DB;font-size:15px;line-height:1.7;}
+  @media (max-width:600px){.callout{grid-template-columns:1fr;}}
+
+  /* SKILL CARDS */
+  .skills-grid{display:flex;flex-direction:column;gap:28px;}
+  .skill-card{
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:0;
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:4px;
+    overflow:hidden;
+  }
+  .skill-card:nth-child(even){grid-template-columns:1fr 280px;}
+  .skill-card:nth-child(even) .skill-media{order:2;}
+  .skill-media{
+    position:relative;
+    background:var(--navy);
+    min-height:220px;
+  }
+  .skill-media img{width:100%;height:100%;object-fit:cover;display:block;}
+  .skill-media-cap{
+    position:absolute;bottom:0;left:0;right:0;
+    background:linear-gradient(0deg, rgba(0,0,0,0.65), transparent);
+    color:#fff;font-size:11px;font-family:'JetBrains Mono',monospace;
+    padding:22px 14px 8px;letter-spacing:0.02em;
+  }
+  .skill-content{padding:32px clamp(20px,4vw,40px);}
+  .skill-tags{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap;}
+  .tag{
+    font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.06em;text-transform:uppercase;
+    padding:4px 10px;border-radius:20px;
+  }
+  .tag-stage{background:#EDE3CE;color:#8A6A22;}
+  .tag-type{background:#E4ECE6;color:#3F6B4B;}
+  .skill-content h3{font-size:22px;font-weight:500;margin:0 0 12px;color:var(--navy);}
+  .skill-content p{font-size:15px;color:var(--ink-soft);margin:0;line-height:1.7;}
+  @media (max-width:700px){
+    .skill-card, .skill-card:nth-child(even){grid-template-columns:1fr;}
+    .skill-card:nth-child(even) .skill-media{order:0;}
+    .skill-media{min-height:180px;}
+  }
+
+  /* REFERENCES */
+  .refs{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px;}
+  .refs li{
+    font-size:14px;color:var(--ink-soft);padding-left:24px;position:relative;line-height:1.6;
+  }
+  .refs li::before{content:"—";position:absolute;left:0;color:var(--sage);}
+  .refs li strong{color:var(--ink);}
+
+  footer{
+    background:var(--navy);color:#8CA0B8;padding:40px 0;font-size:13px;
+  }
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+  footer strong{color:var(--white);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="nav-id"> Employability Skills Portfolio</div>
+    <div class="nav-links">
+      <a href="#reflection">Reflection</a>
+      <a href="#journey">Skills Journey</a>
+      <a href="#references">References</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Reflection on Employability Skills</span>
+    <h1>My employability journey, <em>mapped like a consumer's.</em></h1>
+    <p class="lead">Five skills, developed while researching and presenting M&amp;S's consumer journey — plotted the same way we mapped M&amp;S's own customers: awareness through to advocacy.</p>
+
+    <div class="route">
+      <div class="route-line"></div>
+      <a href="#s-awareness" class="stop">
+        <div class="stop-dot"></div>
+        <span class="stop-stage">Awareness</span>
+        <span class="stop-skill">Active Participation</span>
+      </a>
+      <a href="#s-consideration" class="stop">
+        <div class="stop-dot"></div>
+        <span class="stop-stage">Consideration</span>
+        <span class="stop-skill">Career Awareness &amp; Prep</span>
+      </a>
+      <a href="#s-purchase" class="stop">
+        <div class="stop-dot"></div>
+        <span class="stop-stage">Purchase</span>
+        <span class="stop-skill">Managing Workloads</span>
+      </a>
+      <a href="#s-retention" class="stop">
+        <div class="stop-dot"></div>
+        <span class="stop-stage">Retention</span>
+        <span class="stop-skill">Teamwork</span>
+      </a>
+      <a href="#s-advocacy" class="stop">
+        <div class="stop-dot"></div>
+        <span class="stop-stage">Advocacy</span>
+        <span class="stop-skill">Networking</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="reflection">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Reflection on Employability Skills</h2>
+
+    </div>
+
+    <div class="reflection-card">
+      <div class="reflection-meta">
+    
+      </div>
+      <div class="reflection-body">
+        <p>The Consumer Journey module and in particular the analysis of the Marks & Spencer's omnichannel approach provided me with a focussed, practical environment to work in to acquire the employability skills required by the module.</p>
+        <p>The groundwork was the active partaking. When our group mapped out M&S's journey stages, I was able to provide evidenced argument as opposed to opinion because I had attended a series of seminars and workshops on consumer behaviour theory such as Maslow's hierarchy, or the Engel–Blackwell model. Teamwork was a natural extension of that: we did our research, design and delivery in teams, and it was getting one section of the presentation to fit with the argument from the other section about “brand psychology”, while ensuring that no one's ethics were in conflict with each other, was a lesson in how much a group presentation relies on synchronised language and thought (Gibson,Landry and Tuntland, 2024).</p>
+        <p>Here, where lexical and logical semantics were no longer a desired add-on but became the glue that kept our argument together. The terminology used in the slides was key to keeping our buyer persona separate from the more general discussion of target-audience: I insisted on keeping segmentation and targeting and positioning analytically distinct – and it's this discipline and consistency which held us together when arguing the need for a Sparks loyalty programme rather than the programme's name, rather than its drift between claims. The Q&A process was also logical, as I had to demonstrate, in live session, how a recommendation arose from the evidence, and not just sound convincing.</p>
+        <p>The ability to manage the workload across the three assessments, including a quiz, a presentation and this reflection, required me to plan backwards from deadlines, rather than reacting to them (Kramer,Hsiao and Stienstra, 2026).This has been followed by career awareness; my investigations into the way M&S use AI personalisation and augmented reality has led me to think that I would like to progress towards a more digital marketing and consumer insight job, instead of the generalist route. Networking was more off-the-cuff, in the form of peer feedback in rehearsals or questions posed by the lecturer, both of which helped me formulate a strategic decision to those not within my own thinking.</p>
+        <p>Overall, all of these experiences have honed my thinking repertoire, made me more thoughtful about the language, more disciplined with logic, and more focused on my own trajectory namely, a marketing career.</p>
+      </div>
+
+      <div class="callout">
+        <span class="callout-mark">“</span>
+        <div>
+          <h3>Lexical &amp; logical semantics in practice</h3>
+          <p>Lexical semantics is about precision of word choice and meaning, not conflating "segmentation" with the "targeting". Logical semantics is the consistency of reasoning between a claim and evidence. Sharpened in both senses between quiz and group presentation: slide language became more disciplined, and the justifications for the strategic recommendations came across in a much more easily defensible way when questioned.The importance of collaboration, ethical decision making and continuous learning, and how these skills play a significant role in creating a successful career path in the current marketing landscape (Shifa et al., 2025).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="journey">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">Evidence of development</span>
+      <h2>Five stops on the skills journey</h2>
+      <p>The following sections provide evidence of the employability skills developed through participation in
+         The Consumer Journey module and the Marks & Spencer group presentation.</p>
+    </div>
+
+    <div class="skills-grid">
+
+    <div class="skill-card" id="s-awareness">
+        <div class="skill-media">
+            <img src="fig1.png" alt="Active Participation">
+        </div>
+
+        <div class="skill-content">
+            <div class="skill-tags">
+                <span class="tag tag-stage">Awareness</span>
+                <span class="tag tag-type">Mandatory</span>
+            </div>
+
+            <h3>Active Participation</h3>
+
+            <p>Consistent attendance at lectures, seminars and workshops on consumer behaviour theory enabled me to actively participate in the Marks &amp; Spencer group project. By applying concepts such as Maslow's Hierarchy of Needs during our consumer behaviour analysis, I was able to contribute theory-informed ideas during planning discussions and make meaningful contributions to the group's work.</p>
+
+        </div>
+    </div>
+
+      <div class="skill-card" id="s-consideration">
+          <div class="skill-media">
+              <img src="fig2.png" alt="Career Awareness &amp; Preparation">
+          </div>
+
+          <div class="skill-content">
+              <div class="skill-tags">
+                  <span class="tag tag-stage">Consideration</span>
+                  <span class="tag tag-type">Optional</span>
+              </div>
+
+              <h3>Career Awareness &amp; Preparation</h3>
+
+              <p>Researching Marks &amp; Spencer's use of AI personalisation and augmented reality for the Creative Campaign section increased my understanding of current digital marketing practices. It also helped me identify the knowledge and skills required for future careers in digital marketing and consumer insight, strengthening my confidence and career readiness.</p>
+
+          </div>
+      </div>
+
+      <div class="skill-card" id="s-purchase">
+          <div class="skill-media">
+              <img src="fig3.png" alt="Managing Workloads">
+          </div>
+
+          <div class="skill-content">
+              <div class="skill-tags">
+                  <span class="tag tag-stage">Purchase</span>
+                  <span class="tag tag-type">Mandatory</span>
+              </div>
+
+              <h3>Managing Workloads</h3>
+
+              <p>Completing the quiz, group presentation and this reflection within the same assessment period strengthened my workload management skills. By planning my tasks, setting priorities and meeting deadlines, I was able to balance multiple responsibilities while maintaining the quality of my contribution to the Marks &amp; Spencer project.</p>
+
+          </div>
+      </div>
+
+        <div class="skill-card" id="s-retention">
+            <div class="skill-media">
+              <img src="fig4.png" alt="Teamwork" style="object-fit: unset;">
+            </div>
+
+            <div class="skill-content">
+                <div class="skill-tags">
+                    <span class="tag tag-stage">Retention</span>
+                    <span class="tag tag-type">Mandatory</span>
+                </div>
+
+                <h3>Teamwork</h3>
+
+                <p>Working collaboratively on the Marks &amp; Spencer presentation strengthened my teamwork skills. Each group member was responsible for different sections, but we regularly reviewed our work together to ensure our analysis of brand psychology, the consumer journey and the Sparks loyalty programme remained accurate, consistent and well connected throughout the presentation.</p>
+
+            </div>
+        </div>
+
+          <div class="skill-card" id="s-advocacy">
+              <div class="skill-media">
+                  <img src="fig5.png" alt="Networking">
+              </div>
+
+              <div class="skill-content">
+                  <div class="skill-tags">
+                      <span class="tag tag-stage">Advocacy</span>
+                      <span class="tag tag-type">Optional</span>
+                  </div>
+
+                  <h3>Networking</h3>
+
+                  <p>Rehearsing the presentation with classmates and responding to questions from the lecturer helped me build professional relationships and improve my communication skills. Feedback from peers and the lecturer enabled me to refine my explanations, present marketing concepts more confidently and communicate strategic decisions to different audiences.</p>
+
+              </div>
+          </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="references">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Reference List</h2>
+    </div>
+
+    <ul class="refs">
+      <li><strong>Gibson, C., Landry, M.D. and Tuntland, H.</strong> (2024) 'Conceptualizing the Facilitators and Barriers of Successful Multidisciplinary Teamwork Within the Reablement Process: A Scoping Review', <em>Patient Preference and Adherence</em>, pp. 2621–2635.</li>
+
+      <li><strong>Kramer, A., Hsiao, Y.P. and Stienstra, M.</strong> (2026) 'Clarifying the unseen: Assessment workload and time expectations for students in higher education', <em>Review of Education</em>, 14(2), p. e70170.</li>
+
+      <li><strong>Shifa, S., Javaid, H.A., Khalid, S. and Shafiq, F.</strong> (2025) 'How AI can facilitate continuous education and skills development for adults throughout their careers', <em>The Critical Review of Social Sciences Studies</em>, 3(1), pp. 3252–3267.</li>
+    </ul>
+  </div>
+</section>
+</section>
+<footer>
+    <div class="wrap">
+        <span><strong>Employability Skills Portfolio</strong> |The Consumer Journey</span>
+        <span>Reflection on Employability Skills Webpage</span>
+    </div>
+</footer>
+</body>
+</html>
